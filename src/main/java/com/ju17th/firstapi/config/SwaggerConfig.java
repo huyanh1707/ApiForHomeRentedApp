@@ -1,4 +1,4 @@
-package com.ju17th.firstapi;
+package com.ju17th.firstapi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

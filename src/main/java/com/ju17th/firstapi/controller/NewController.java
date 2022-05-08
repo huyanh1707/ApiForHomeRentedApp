@@ -10,19 +10,21 @@ import org.springframework.web.bind.annotation.*;
 public class NewController {
 
     @Autowired
-    private INewService NewService;
+    private INewService newService;
 
     @PostMapping(value = "/new")
     public NewDTO createNew(@RequestBody NewDTO model) {
-        return NewService.save(model);
+        return newService.save(model);
     }
 
-    @PutMapping(value = "/new")
-    public NewDTO updateNew(@RequestBody NewDTO model) {
-        return model;
+    @PutMapping(value = "/new/{id}")
+    public NewDTO updateNew(@RequestBody NewDTO model, @PathVariable("id") long id) {
+        model.setId(id);
+        return newService.save(model);
     }
 
     @DeleteMapping(value = "/new")
     public void deleteNew(@RequestBody long[] ids) {
+        newService.delete(ids);
     }
 }

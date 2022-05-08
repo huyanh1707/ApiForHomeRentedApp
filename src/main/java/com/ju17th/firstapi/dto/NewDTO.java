@@ -1,6 +1,6 @@
 package com.ju17th.firstapi.dto;
 
-public class NewDTO {
+public class NewDTO extends BaseDTO<NewDTO> {
 
     private String title;
     private String content;
